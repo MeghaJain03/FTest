@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Overpass:wght@100;200;300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Big Samurai';
+  src: url('./assets/fonts/Big Samurai.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Overpass', sans-serif;
+}
+
+/* business */
+.bg-gradient {
+  background: linear-gradient(to right,
+      rgb(205, 240, 244),
+      rgb(241, 253, 251),
+      rgb(255, 255, 255),
+      rgb(254, 250, 239),
+      rgb(254, 246, 225));
+}
+
+.imagediv {
+  align-items: flex-start;
+  width: 100%;
+  height: 85vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.business-bg {
+  background-image: url("/banner.jpg");
+}
+
+.employee-bg {
+  background-image: url("/employee.jpg");
+}
+
+.organizaton-bg {
+  background-image: url("/Ngo.jpg");
+}
+
+#preloader {
+  background: whitesmoke url(../src/assets/images/logoMove.gif) no-repeat center center;
+  background-size: 10%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+.navContent li {
+  position: relative;
+  cursor: pointer;
+}
+
+.navContent li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  display: none;
+  height: 4.2px;
+  bottom: -17px;
+  left: 0;
+  background-color: #5faa41;
+  transition: all 0.3s ease;
+}
+
+.navContent li:hover::after {
+  display: block;
+}
+
+.faqSection::before {
+  content: "";
+  position: absolute;
+  height: 7rem;
+  background-image: url("./assets/images/divider-main-5.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  bottom: -1%;
+  left: 0;
+  right: 0;
+}
+
+.faqHeader::before {
+  content: "";
+  position: absolute;
+  height: 8rem;
+  background-color: #ffffff;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 50% 50% 0 0;
+}
+
+.otp-input {
+  background-color: rgb(228, 228, 228);
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+  border: none;
+  border-radius: 7px;
+  caret-color: #5db094;
+  outline: none;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 33px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #007969;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #007969;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 columns */
+  grid-template-rows: repeat(2, 1fr);
+  /* 2 rows */
+  gap: 10px;
+  height: 90vh;
+}
+
+/* .videoCall, .videoCall * {
+  font-size: 1.6rem !important;  /* 16px relative to root */
+/* Or directly set it to 16px if needed */
+/* font-size: 16px !important; */
+/* } */
+
+
+.video {
+  width: 30vw;
+  height: 20vw;
+  border-radius: 8px;
+  object-fit: cover;
+  /* border: 2px white solid; */
+}
+
+.localVideo {
+  position: absolute;
+  height: 25vh;
+  width: 20vw;
+  bottom: 0;
+  right: 2%;
+  object-fit: cover;
+  border-radius: 8%;
+  z-index: 20;
+
+}
+
+.loader {
+  border: 9px solid #f3f3f3;
+  border-top: 8px solid #3e4244;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width:767px) {
+  .faqSection::before {
+    background-image: url("./assets/images/divider-main-5-phone.png");
+    background-position: bottom;
+    background-size: 100%;
+  }
+
+  .heading {
+    @apply text-[26px] leading-[36px];
+  }
+
+  .text__para {
+    @apply text-[18px] leading-7 mt-3;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .therapyOption {
+    background-position: -7vw 8vh !important; 
+  }
+}
+
+@media (max-width:480px) {
+  html {
+    font-size: 58%;
+  }
+  .therapyOption {
+    background-position: -17.2vw 8.2vh !important; 
+  } 
+  .therapyOption p{
+    position:absolute;
+    left:1rem;
+    top:0.4rem;
+  }
+}
+
+@layer base {
+  /* section{
+      @apply py-[75px];
+  } */
+}
+
+@layer components {
+  .container {
+    @apply max-w-full w-[1440px] px-5 mx-auto;
+  }
+
+  .btn {
+    @apply bg-primaryColor py-[15px] px-[35px] rounded-[50px] text-2xl text-white font-[600] mt-[38px];
+  }
+
+  .heading {
+    @apply text-[44px] leading-[54px] font-[700] text-headingColor;
+  }
+
+  .text__para {
+    @apply text-[18px] leading-[30px] font-[400] text-textColor mt-[18px];
+  }
+
+
+  /* .header{
+  @apply bg-[url('./assets/images/mask.png')] bg-no-repeat bg-center bg-cover w-full h-[100px] leading-[100px];
+ }
+
+ .hero__section{
+  @apply bg-[url('./assets/images/hero-bg.png')] bg-no-repeat bg-center bg-cover;
+ } */
+
+  .form_label {
+    @apply text-textColor font-semibold text-[16px] leading-7 mb-2;
+  }
+
+  .form_input {
+    @apply w-full px-4 py-3 border border-solid border-[#0066ff61] focus:outline-none focus:border-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer;
+  }
+}
+
+@media only screen and (max-width:1024px) {
+  .container {
+    @apply w-full;
+  }
+
+  /* section{
+      @apply py-[35px];
+  } */
+}
